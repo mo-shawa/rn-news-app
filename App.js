@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StatusBar, SafeAreaView, StyleSheet, Text, View, FlatList } from 'react-native';
+import Header from './components/Header';
+import Card from './components/Card';
+
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView >
+      <View>
+        <Header />
+      </View>
+      <View style={styles.container}>
+        <Card />
+        <Card />
+        <Card />
+      </View>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
 
+const PRIMARY_COLOR = '#4a67a2'
+const LIGHT_COLOR = '#fbfbfc'
+const DARK_COLOR = '#fbfbfc'
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: LIGHT_COLOR,
+    width: '100%'
   },
 });
